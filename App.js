@@ -6,13 +6,24 @@ function App() {
   return (
     <SafeAreaView>
       <View style={{
-        borderWidth: 1,
-        marginTop: 20,
-        borderColor: '#0fa328ff',
-        borderRadius: 10,
-        padding: 10,
+        backgroundColor: 'green'
       }}>
-        <Text>Hi, I just completed my first React Native Assignment!</Text>
+        <View style={{
+          backgroundColor: 'red',
+          marginVertical: 20,
+          padding: 10,
+          marginHorizontal: 50,
+        }}>
+          <Text style={{
+            color: 'white',
+            fontFamily: 'Arial',
+            fontSize: 18,
+            fontStyle: 'italic',
+            fontWeight: '200',
+            textAlign: 'right'
+
+          }}>Hi, I just completed my first React Native Assignment!</Text>
+        </View>
       </View>
     </SafeAreaView>
   );
