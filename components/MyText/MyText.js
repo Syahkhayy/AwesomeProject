@@ -1,18 +1,31 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text } from 'react-native';
 import style from './style';
 
-class MyText extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fullName: props.name + ' Khairul',
-    };
-  }
+const MyText = (props) => {
+  const [fullName, setFullName] = useState('');
 
-  render() {
-    return <Text style={style.text}>Hello, {this.props.name}!</Text>;
-  }
-}
+  useEffect(() => {
+    console.log('Has been mounted');
+    return () => {
+      console.log('Component has been destroyeed');
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log('Value of FullName changed');
+  }, [fullName]);
+
+  return (
+    <Text
+      style={style.text}
+      onPress={() => {
+        setFullName('Syahmi Khairul');
+      }}
+    >
+      Hello, {props.name}! Full name is {fullName}
+    </Text>
+  );
+};
 
 export default MyText;
