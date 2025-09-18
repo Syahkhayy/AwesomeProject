@@ -1,16 +1,18 @@
-import React from "react";
-import { Text } from "react-native";
-import style from "./style";
+import React, { Component } from 'react';
+import { Text } from 'react-native';
+import style from './style';
 
+class MyText extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fullName: props.name + ' Khairul',
+    };
+  }
 
-const MyText = ({ index }) => {
-    return <Text style={style.text} onPress={() => handleTextClick()}>{"Hello, React Native World! " + index}</Text>
+  render() {
+    return <Text style={style.text}>Hello, {this.props.name}!</Text>;
+  }
 }
-
-const handleTextClick = () => {
-    // eslint-disable-next-line no-alert
-    alert('The text has been clicked!');
-};
-
 
 export default MyText;
